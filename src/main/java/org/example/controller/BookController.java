@@ -7,26 +7,26 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Book_Controller {
+public class BookController {
     private final List<Book> books;
     private final BookView view;
 
-    public Book_Controller(List<Book> books, BookView view) {
+    public BookController(List<Book> books, BookView view) {
         this.books = books;
         this.view = view;
     }
 
     public void ShowMenu() {
         Scanner sc = new Scanner(System.in);
-        int UserChoice;
+        int userChoice;
         do {
             view.ShowMenu();
             while(!sc.hasNextInt()) {
                 System.out.println("Please enter a valid number:");
                 sc.next();
             }
-            UserChoice = sc.nextInt();
-            switch (UserChoice) {
+            userChoice = sc.nextInt();
+            switch (userChoice) {
                 case 1 -> {
                     sc.nextLine(); // consume the newline
                     System.out.println("Please enter the author: ");
@@ -53,7 +53,7 @@ public class Book_Controller {
                 default -> System.out.println("Invalid choice. Please try again.");
             }
 
-        } while (UserChoice !=5);
+        } while (userChoice !=5);
     }
 
     private List<Book> findBooksByAuthor(String author) {

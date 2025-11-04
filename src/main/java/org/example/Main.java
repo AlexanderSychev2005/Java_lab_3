@@ -1,7 +1,7 @@
 package org.example;
 import org.example.model.Book;
 import org.example.view.BookView;
-import org.example.controller.Book_Controller;
+import org.example.controller.BookController;
 
 
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class Main {
         );
 
         BookView bookView = new BookView();
-        Book_Controller controller = new Book_Controller(books, bookView);
+        BookController controller = new BookController(books, bookView);
 
         System.out.println("Welcome to the Book Management System");
         System.out.println("Books available:");
